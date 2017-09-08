@@ -1,0 +1,5 @@
+check process opendj
+  with pidfile /var/vcap/sys/run/opendj/opendj.pid
+  start program "/var/vcap/jobs/opendj/bin/ctl start" timeout 300 seconds
+  stop program "/var/vcap/jobs/opendj/bin/ctl stop"
+  group vcap

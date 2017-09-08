@@ -1,0 +1,22 @@
+set -e
+
+export OPENDJ_JAVA_HOME=/var/vcap/packages/java
+
+unzip opendj/opendj-3.0.0.zip
+cp -rf opendj/* ${BOSH_INSTALL_TARGET}
+
+${BOSH_INSTALL_TARGET}/setup \
+    --cli \
+    --backendType je \
+    --baseDN 'dc=sample,dc=io' \
+    --sampleData '1000' \
+    --ldapPort 1389 \
+    --adminConnectorPort 4444 \
+    --rootUserDN 'cn=Directory Manager' \
+    --rootUserPassword 'password' \
+    --enableStartTLS \
+    --ldapsPort 1636 \
+    --generateSelfSignedCertificate \
+    --no-prompt \
+    --noPropertiesFile \
+    --acceptLicense

@@ -1,0 +1,9 @@
+---
+name: opendj
+
+packages:
+- java
+- opendj
+
+templates:
+  ctl.erb: bin/ctl

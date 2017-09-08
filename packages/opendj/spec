@@ -1,0 +1,8 @@
+---
+name: opendj
+
+dependencies:
+- java
+
+files:
+- opendj/opendj-3.0.0.zip
